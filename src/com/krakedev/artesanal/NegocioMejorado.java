@@ -69,6 +69,26 @@ public class NegocioMejorado {
         }
         return null;
     }
+    
+    public Cliente buscarClientePorCedula(String cedula) {
+        for (int i = 0; i < clientes.size(); i++) {
+            Cliente c = clientes.get(i);
+            if (c.getCedula().equals(cedula)) {
+                return c;
+            }
+        }
+        return null;
+    }
+
+    public Cliente buscarClientePorCodigo(int codigo) {
+        for (int i = 0; i < clientes.size(); i++) {
+            Cliente c = clientes.get(i);
+            if (c.getCodigo() == codigo) {
+                return c;
+            }
+        }
+        return null;
+    }
 
     
     
