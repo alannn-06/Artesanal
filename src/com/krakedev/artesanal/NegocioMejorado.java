@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class NegocioMejorado {
 
     private ArrayList<Maquina> maquinas;
+    private ArrayList<Cliente> clientes;
+    private int ultimoCodigo = 100;
 
     public NegocioMejorado() {
         maquinas = new ArrayList<Maquina>();
@@ -16,6 +18,21 @@ public class NegocioMejorado {
 
     public void setMaquinas(ArrayList<Maquina> maquinas) {
         this.maquinas = maquinas;
+    }
+    
+    public ArrayList<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(ArrayList<Cliente> clientes) {
+        this.clientes = clientes;
+    }
+    
+    public void registrarCliente(String nombre, String cedula) {
+        Cliente nuevoCliente = new Cliente(nombre, cedula);
+        nuevoCliente.setCodigo(ultimoCodigo);
+        ultimoCodigo++;
+        clientes.add(nuevoCliente);
     }
     
     public String generarCodigo() {
@@ -53,4 +70,6 @@ public class NegocioMejorado {
         return null;
     }
 
+    
+    
 }
