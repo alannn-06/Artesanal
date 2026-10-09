@@ -108,4 +108,14 @@ public class NegocioMejorado {
     }
     
     
+    public double consultarValorVendido() {
+        double totalVendido = 0;
+        for (int i = 0; i < clientes.size(); i++) {
+            Cliente c = clientes.get(i);
+            totalVendido += c.getTotalConsumido();
+        }
+        return totalVendido;
+    }
+    
+    
 }
